@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════
+   APP SHELL
+═══════════════════════════════════ */
+.app-container {
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.app-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.25rem;
+}
+
+.app-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(135deg,
+      #FF9933 0%,
+      #FFFFFF 50%,
+      #138808 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -.03em;
+  margin-bottom: .5rem;
+  line-height: 1.15;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.app-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Tab Navigation ── */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  background: var(--surface-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: .5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.4rem;
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Per-tab distinct active colors */
+.tab-btn[data-tab="learn"].active {
+  background: var(--blue-600);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.3);
+}
+
+.tab-btn[data-tab="ask"].active {
+  background: var(--green-600);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(19, 136, 8, 0.3);
+}
+
+.tab-btn[data-tab="quiz"].active {
+  background: var(--orange-500);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(255, 153, 51, 0.4);
+}
+
+.tab-btn[data-tab="glossary"].active {
+  background: var(--purple-600);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.3);
+}
+
+.tab-content {
+  min-height: 420px;
+}
+
+.indian-flag-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.25);
+  /* 🔥 brightness layer */
+}

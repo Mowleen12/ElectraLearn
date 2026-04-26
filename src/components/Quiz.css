@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════
+   QUIZ — Orange Theme
+═══════════════════════════════════════════ */
+
+.quiz-wrapper { max-width: 42rem; margin: 0 auto; }
+
+/* Progress row */
+.quiz-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .65rem;
+}
+
+.quiz-question-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--orange-700);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.quiz-score-badge {
+  background: var(--orange-100);
+  color: var(--orange-800, #9a3412);
+  border: 1.5px solid var(--orange-200);
+  border-radius: 9999px;
+  padding: .2rem .8rem;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.quiz-progress-track {
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 9999px;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--orange-400), var(--orange-600));
+  border-radius: 9999px;
+  transition: width .4s cubic-bezier(.4,0,.2,1);
+}
+
+/* Question */
+.quiz-question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+}
+
+/* Options */
+.quiz-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: .875rem 1.2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--surface-color);
+  text-align: left;
+  font-size: .95rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-primary);
+  cursor: pointer;
+  gap: .75rem;
+  transition: all var(--t-fast);
+}
+
+.option-letter {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  background: var(--bg-color);
+  transition: all var(--t-fast);
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--orange-400);
+  background: var(--orange-50);
+  color: var(--orange-800, #9a3412);
+  transform: translateX(4px);
+}
+.quiz-option:hover:not(:disabled) .option-letter {
+  border-color: var(--orange-500);
+  background: var(--orange-500);
+  color: #fff;
+}
+
+.quiz-option.correct {
+  border-color: var(--green-500);
+  background: var(--green-50);
+  color: var(--green-800);
+}
+.quiz-option.correct .option-letter {
+  background: var(--green-600);
+  border-color: var(--green-600);
+  color: #fff;
+}
+
+.quiz-option.incorrect {
+  border-color: var(--red-500);
+  background: var(--red-50);
+  color: var(--red-700);
+  animation: shake .4s ease-in-out;
+}
+.quiz-option.incorrect .option-letter {
+  background: var(--red-500);
+  border-color: var(--red-500);
+  color: #fff;
+}
+
+.quiz-option.disabled { opacity: .55; cursor: default; }
+
+/* Explanation */
+.explanation-box {
+  background: var(--blue-50);
+  border: 1.5px solid var(--blue-200);
+  border-left: 4px solid var(--blue-600);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 1.25rem;
+}
+
+.explanation-label {
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--blue-700);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: .4rem;
+}
+
+.explanation-text {
+  color: var(--text-secondary);
+  font-size: .92rem;
+  line-height: 1.65;
+}
+
+/* Score / completion screen */
+.score-screen { text-align: center; padding: 2rem 1rem; }
+
+.score-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid var(--orange-500);
+  background: var(--orange-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 0 0 8px rgb(249 115 22 / .1), var(--shadow-md);
+}
+
+.score-text {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--orange-700);
+  font-family: var(--font-display);
+}
+
+.score-title {
+  font-size: 1.4rem;
+  color: var(--orange-800, #9a3412);
+  margin-bottom: .5rem;
+}
+
+.score-subtitle { color: var(--text-secondary); margin-bottom: 2rem; }
